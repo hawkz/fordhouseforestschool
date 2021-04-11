@@ -1,0 +1,82 @@
+.banner {
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 1rem;
+    color: white;
+    text-shadow: 0 0 0.1em rgba(0,0,0,0.5);
+
+    @media all and (min-width: 760px) {
+        padding: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin: 0 0 2rem;
+        max-width: 14em;
+        @media all and (min-width: 760px) {
+            font-size: 3rem;
+        }
+    }
+}
+
+.blockquote {
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 6rem;
+    color: white;
+    text-align: center;
+    h2 {
+        font-size: 2.5rem;
+        @media all and (min-width: 760px) {
+            font-size: 3rem;
+        }
+    }
+    blockquote {
+        text-shadow: 0 0 0.1em rgba(0,0,0,0.5);
+    }
+}
+
+.grey {
+    background: #e1dfd9;
+}
+
+.content {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 0;
+}
+
+.col {
+    position: relative;
+    display: grid;
+    grid-auto-columns: 1fr;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    > div {
+        padding: 0 1rem;
+    }
+    @media all and (min-width: 960px) {
+
+        grid-gap: 2rem;
+        > div {
+            width: 100%;
+            grid-row: 1;
+
+            > img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

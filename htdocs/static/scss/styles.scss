@@ -1,0 +1,321 @@
+@import "blocks";
+@import "form";
+
+.hide, #toggle {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background: #1d231c;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+a {
+    color: #209d50;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &.button {
+        display: inline-block;
+        font-family: 'Manrope', sans-serif;
+        height: 48px;
+        line-height: 48px;
+        padding: 0 32px;
+        background: #209d50;
+        color: white;
+        white-space: nowrap;
+        text-decoration: none
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    font-size: 1rem;
+
+    &.large {
+        font-size: 1.5rem;
+    }
+}
+
+li {
+    font-family: 'Manrope', sans-serif;
+}
+
+header {
+    display: block;
+    margin: 0;
+    padding: 1rem;
+    color: white;
+    background: #03530a;
+    @media all and (min-width: 960px) {
+        position: static;
+        padding: 1rem;
+        display: flex;
+
+        a {
+            color: white;
+            text-decoration: none;
+            &.active {
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+
+    a,
+    li {
+        display: block;
+        color: black;
+        margin: 0;
+    }
+
+    h1 {
+        display: inline;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 a {
+        display: block;
+        overflow: hidden;
+        text-indent: -100em;
+        background: url("../img/ffs.svg") top left no-repeat;
+        width: 240px;
+        height: 116px;
+        background-size: cover;
+    }
+
+    svg {
+        margin: 0;
+    }
+
+    .icon {
+        display: inline-block;
+        margin-top: 16px;
+        @media all and (min-width: 960px) {
+            margin-top: 0;
+        }
+    }
+
+    .button {
+        background: green;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+label[for=toggle] {
+    position: absolute;
+    z-index: 10;
+    top: 80px;
+    right: 16px;
+    pointer-events: all;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    padding-right: 1.2em;
+    color: #209d50;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0.45em;
+        width: 1em;
+        height: 0.15em;
+        background: #209d50;
+        box-shadow: 0 0.25em 0 0 #209d50, 0 0.5em 0 0 #209d50;
+    }
+    @media all and (min-width: 960px) {
+        display: none;
+    }
+}
+
+#toggle:checked + header {
+    position: fixed;
+    z-index: 9;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    color: black;
+
+    h1 a {
+        @media all and (max-width: 960px) {
+            background-image: url("../img/logo.svg");
+        }
+    }
+
+    nav {
+        display: block;
+
+        a {
+            color: black;
+            &.button {
+                color: white;
+            }
+        }
+
+        svg {
+            fill: black;
+        }
+    }
+}
+
+nav {
+    display: none;
+    line-height: 64px;
+    margin-top: 32px;
+    @media all and (min-width: 960px) {
+        margin: 32px 0 0 auto;
+        display: block;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: block;
+        font-size: 1.2rem;
+        line-height: 48px;
+        @media all and (min-width: 960px) {
+            float: left;
+            margin-left: 1rem;
+        }
+    }
+
+    a {
+        display: block;
+        @media all and (min-width: 960px) {
+            color: white;
+        }
+    }
+
+    span {
+        display: none;
+    }
+
+    svg {
+        display: block;
+        fill: black;
+        @media all and (min-width: 960px) {
+            fill: white;
+        }
+    }
+    @media all and (min-width: 960px) {
+        .button {
+            margin-left: 16px;
+            text-align: center;
+        }
+    }
+}
+
+main {
+    margin: 0;
+    > div {
+        margin: 0;
+        overflow: hidden;
+    }
+}
+
+footer {
+    display: block;
+    margin: 0;
+    padding: 3rem 1rem;
+    color: white;
+    background: #1d231c;
+    text-align: center;
+    @media all and (min-width: 960px) {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        section:first-child {
+            width: 70%;
+        }
+
+        section:last-child {
+            width: 30%;
+        }
+    }
+
+    section {
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+
+
+    img {
+        display: inline-block;
+        width: auto;
+        height: 65px;
+        @media all and (min-width: 960px) {
+            height: 100px;
+        }
+    }
+
+    img + img {
+        margin-left: 2rem;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+}
