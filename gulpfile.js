@@ -21,8 +21,8 @@ const server = browserSync.create();
 
 // File paths
 const files = {
-    scssPath: 'htdocs/static/scss/*.scss',
-    jsPath: 'htdocs/static/js/**/*.js'
+    scssPath: 'docs/static/scss/*.scss',
+    jsPath: 'docs/static/js/**/*.js'
 }
 
 // Sass task: compiles the style.scss file into style.css
@@ -32,7 +32,7 @@ function scssTask() {
         .pipe(sass()) // compile SCSS to CSS
         .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-        .pipe(dest('htdocs/static/css')); // put final CSS in htdocs folder
+        .pipe(dest('docs/static/css')); // put final CSS in htdocs folder
 }
 
 // JS task: concatenates and uglifies JS files to script.js
@@ -43,7 +43,7 @@ function jsTask() {
         ])
         .pipe(concat('script.js'))
         .pipe(uglify())
-        .pipe(dest('htdocs/static/js'));
+        .pipe(dest('docs/static/js'));
 }
 
 // Watch task: watch SCSS and JS files for changes
@@ -62,7 +62,7 @@ function watchTask() {
 function serveTask() {
     server.init({
         server: {
-            baseDir: 'htdocs/'
+            baseDir: 'docs/'
         }
     });
 }
