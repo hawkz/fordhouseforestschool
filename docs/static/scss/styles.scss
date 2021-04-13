@@ -51,6 +51,17 @@ h2 {
     font-size: 3rem;
 }
 
+h3 {
+    font-size: 2.5rem;
+}
+
+hr {
+    height: 1px;
+    background: grey;
+    margin: 1rem 0;
+    border: none;
+}
+
 a {
     color: #209d50;
 
@@ -88,6 +99,10 @@ p {
 
 li {
     font-family: 'Manrope', sans-serif;
+}
+
+time {
+    color: grey;
 }
 
 header {
